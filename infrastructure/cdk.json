@@ -67,6 +67,51 @@
     "@aws-cdk/aws-ec2:ebsDefaultGp3Volume": true,
     "@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm": true,
     "@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault": false,
-    "@aws-cdk/aws-s3:keepNotificationInImportedBucket": false
+    "@aws-cdk/aws-s3:keepNotificationInImportedBucket": false,
+    "globals": {
+      "appName": "yourApp",
+      "serviceName": "yourService",
+      "region": "us-west-2"
+    },
+    "production": {
+      "environment": "production",
+      "isProd": true,
+      "domain": "example.com",
+      "subdomain": "subdomain",
+      "codeStarConnectionArn": "arn:aws:codestar-connections:us-west-2:YOURACCOUNT:connection/CONNECTIONID",
+      "repo": {
+        "owner": "h5aaimtron",
+        "name": "aws-cdk-ecs-service",
+        "branch": "main"
+      },
+      "scaling": {
+        "min": 1,
+        "max": 2
+      },
+      "database": {
+        "dbName": "sampleapp",
+        "dbAdmin": "samplerdsadmin"
+      }
+    },
+    "dev": {
+      "environment": "dev",
+      "isProd": false,
+      "domain": "dev.example.com",
+      "subdomain": "subdomain",
+      "codeStarConnectionArn": "arn:aws:codestar-connections:us-west-2:YOURACCOUNT:connection/CONNECTIONID",
+      "repo": {
+        "owner": "h5aaimtron",
+        "name": "aws-cdk-ecs-service",
+        "branch": "main"
+      },
+      "scaling": {
+        "min": 1,
+        "max": 2
+      },
+      "database": {
+        "dbName": "sampleapp",
+        "dbAdmin": "samplerdsadmin"
+      }
+    }
   }
 }
